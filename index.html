@@ -19,7 +19,7 @@
 Generic Styling, for Desktops/Laptops 
 */
 table {
-  width: 70vw; 
+  width: 50vw; 
   /* max-width: 80vw;  */
   border-collapse: collapse; 
 }
@@ -45,9 +45,14 @@ and also iPads specifically.
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
-
+body, html {
+  margin: 10px;
+  padding: 0;
+}
   table {
     width: 90vw;
+    padding: 0;
+    margin: 0;
   }
 
 	/* Force table to not be like tables anymore */
