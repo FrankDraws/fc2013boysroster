@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 1em;
+      display: grid;
+      justify-content: center;
+    }
+    /* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 50vw; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "#"; }
+	td:nth-of-type(2):before { content: "Player Name"; }
+	td:nth-of-type(3):before { content: "Player Number"; }
+	td:nth-of-type(4):before { content: "Parent(s) Name"; }
+	/* td:nth-of-type(5):before { content: "Wars of Trek?"; }
+	td:nth-of-type(6):before { content: "Secret Alias"; }
+	td:nth-of-type(7):before { content: "Date of Birth"; }
+	td:nth-of-type(8):before { content: "Dream Vacation City"; }
+	td:nth-of-type(9):before { content: "GPA"; }
+	td:nth-of-type(10):before { content: "Arbitrary Data"; } */
+}
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Player Name</th>
+        <th>Player Number</th>
+        <th>Parent Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Aiden Quinones</td>
+        <td>16</td>
+        <td>Frank &amp; Alisha Quinones</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jorge Carillo III</td>
+        <td>10</td>
+        <td>Lucy Legnys</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Nolan Mcconnaghy</td>
+        <td>21</td>
+        <td>Mike &amp; Amy Mcconnaghy</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Melo Badillo</td>
+        <td>7</td>
+        <td>Christian &amp; ? Badillo</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Andy Zambrana</td>
+        <td>24</td>
+        <td>Jose &amp; Walesca Zambrana</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Emilio Rodriguez</td>
+        <td>n/a</td>
+        <td>Xaviro, Silvio?</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Liam Santos</td>
+        <td>n/a</td>
+        <td>Alicia Santos</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Mathias Espinosa</td>
+        <td>5</td>
+        <td>Gaby</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Candido Andres Gomez Parra</td>
+        <td>22</td>
+        <td>Claudia</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Mekhi Hatchett</td>
+        <td>17</td>
+        <td>Nikki</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Kevin Gonzalez</td>
+        <td>11</td>
+        <td>"Yo misma soy"</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Sofia Reyes</td>
+        <td>8</td>
+        <td>Mike &amp; Jamie Reyes</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Mathias Torres</td>
+        <td>9</td>
+        <td>Jose &amp; Vanessa</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>David Martinez</td>
+        <td>1</td>
+        <td>Imer Martinez, Marines Nava</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Miguel</td>
+        <td>n/a</td>
+        <td>?</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
