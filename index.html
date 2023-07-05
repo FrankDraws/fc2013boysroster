@@ -23,8 +23,11 @@ table {
   /* max-width: 80vw;  */
   border-collapse: collapse; 
 }
-#staff {
+.info {
   margin-top: 3em;
+}
+table:last-of-type {
+  margin-bottom: 5em;
 }
 /* Zebra striping */
 tr:nth-of-type(odd) { 
@@ -106,6 +109,8 @@ body, html {
 	td:nth-of-type(10):before { content: "Arbitrary Data"; } */
   td.staff:nth-of-type(1):before { content: "Coach"; font-weight: bold}
 	td.staff:nth-of-type(2):before { content: "Team Manager"; font-weight: bold;}
+  td.uniform:nth-of-type(1):before { content: "Home Game Uniform"; font-weight: bold}
+	td.uniform:nth-of-type(2):before { content: "Away Game Uniform"; font-weight: bold;}
 }
 
 /* 
@@ -262,7 +267,7 @@ td {
       </tr>
     </tbody>
   </table>
-  <table id="staff">
+  <table class="info">
     <thead>
       <tr>
         <th>Coach</th>
@@ -273,6 +278,21 @@ td {
       <tr>
         <td class="staff">Coach Christian</td>
         <td class="staff">Jose Luis Zambrana</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="info">
+    <thead>
+      <tr>
+        <th>Home Game Uniforms</th>
+        <th>Away Game Uniforms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="uniform">Red shirt, red shorts, red socks</td>
+        <td class="uniform">White shirt, red shorts, white socks</td>
       </tr>
     </tbody>
   </table>
