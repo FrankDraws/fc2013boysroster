@@ -6,7 +6,7 @@
   <title>Document</title>
   <style>
     body, html {
-      margin: 0;
+      margin: 1em;
       padding: 1em;
       display: grid;
       justify-content: center;
@@ -40,6 +40,11 @@ and also iPads specifically.
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  table {
+    width: 90vw;
+    /* margin: 1em; */
+  }
 
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
