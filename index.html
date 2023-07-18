@@ -1,169 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
   <title>FC 2013 Roster</title>
   <!-- <link rel="stylesheet" href="normalize.css"> -->
   <style>
-    body, html {
+    body,
+    html {
       margin: 1em;
       padding: 1em;
       display: grid;
       place-items: center;
       font: 1em "Helvetica", sans-serif;
     }
-    
+
     /* 
     Responsive table CSS: https://css-tricks.com/responsive-data-tables/
 Generic Styling, for Desktops/Laptops 
 */
-table {
-  width: 50vw; 
-  border-collapse: collapse; 
-}
-.info {
-  margin-top: 3em;
-}
-table:last-of-type {
-  margin-bottom: 5em;
-}
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #eee; 
-}
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
-}
-/* 
+    table {
+      width: 50vw;
+      border-collapse: collapse;
+    }
+
+    .info {
+      margin-top: 3em;
+    }
+
+    table:last-of-type {
+      margin-bottom: 5em;
+    }
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+      background: #eee;
+    }
+
+    th {
+      background: #333;
+      color: white;
+      font-weight: bold;
+    }
+
+    td,
+    th {
+      padding: 6px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    /* 
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-body, html {
-  margin: 10px;
-  padding: 0;
-}
-  table {
-    width: 90vw;
-    padding: 0;
-    margin: 0;
-  }
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-	
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-	
-	/*
+      body,
+      html {
+        margin: 10px;
+        padding: 0;
+      }
+
+      table {
+        width: 90vw;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Force table to not be like tables anymore */
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        border: 1px solid #ccc;
+      }
+
+      td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+
+      /*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "#"; font-weight: bold}
-	td:nth-of-type(2):before { content: "Player Name"; font-weight: bold;}
-	td:nth-of-type(3):before { content: "Player Number"; font-weight: bold}
-	td:nth-of-type(4):before { content: "Parent(s) Name"; font-weight: bold}
-	/* td:nth-of-type(5):before { content: "Wars of Trek?"; }
+      td:nth-of-type(1):before {
+        content: "#";
+        font-weight: bold
+      }
+
+      td:nth-of-type(2):before {
+        content: "Player Name";
+        font-weight: bold;
+      }
+
+      td:nth-of-type(3):before {
+        content: "Player Number";
+        font-weight: bold
+      }
+
+      td:nth-of-type(4):before {
+        content: "Parent(s) Name";
+        font-weight: bold
+      }
+
+      /* td:nth-of-type(5):before { content: "Wars of Trek?"; }
 	td:nth-of-type(6):before { content: "Secret Alias"; }
 	td:nth-of-type(7):before { content: "Date of Birth"; }
 	td:nth-of-type(8):before { content: "Dream Vacation City"; }
 	td:nth-of-type(9):before { content: "GPA"; }
 	td:nth-of-type(10):before { content: "Arbitrary Data"; } */
-  td.staff:nth-of-type(1):before { content: "Coach"; font-weight: bold}
-	td.staff:nth-of-type(2):before { content: "Team Manager"; font-weight: bold;}
-  td.uniform:nth-of-type(1):before { content: "Home Game Uniform"; font-weight: bold}
-	td.uniform:nth-of-type(2):before { content: "Away Game Uniform"; font-weight: bold;}
-}
+      td.staff:nth-of-type(1):before {
+        content: "Coach";
+        font-weight: bold
+      }
 
-/* 
-Font Clamp  
-https://piccalil.li/tutorial/fluid-typography-with-css-clamp/
-*/
+      td.staff:nth-of-type(2):before {
+        content: "Team Manager";
+        font-weight: bold;
+      }
 
-/* h1,
-h2,
-h3,
-p,
-li,
-blockquote,
-th,
-td {
-  font-size: clamp( var(--fluid-type-min, 1rem), calc(1rem + var(--fluid-type-target, 3vw)), var(--fluid-type-max, 1.3rem));
-  max-width: 60ch;
-}
+      td.uniform:nth-of-type(1):before {
+        content: "Home Game Uniform";
+        font-weight: bold
+      }
 
-h1,
-h2,
-h3 {
-  font-family: var(--hf01);
-}
-
-h1 {
-  --fluid-type-min: 1.5rem;
-  --fluid-type-max: 2.5rem;
-  --fluid-type-target: 5vw;
-}
-
-h2 {
-  --fluid-type-min: 1rem;
-  --fluid-type-max: 1.8rem;
-}
-
-h3 {
-  --fluid-type-min: 0.7rem;
-  --fluid-type-max: 1.4rem;
-  text-transform: capitalize;
-}
-
-p,
-li,
-th,
-td {
-  line-height: 1.7;
-  padding-bottom: 0.5em;
-  font-family: var(--bfont01);
-} */
+      td.uniform:nth-of-type(2):before {
+        content: "Away Game Uniform";
+        font-weight: bold;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div><h1>Four Corners 2013 Boys - Red Team Roster</h1></div>
+  <div>
+    <h1>Four Corners 2013 Boys - Red Team Roster</h1>
+  </div>
   <table>
     <thead>
       <tr>
@@ -173,99 +179,103 @@ td {
         <th>Parent(s) Name</th>
       </tr>
     </thead>
+
+    <!-- ROSTER  -->
     <tbody>
       <tr>
-        <td>1</td>
+        <td></td>
         <td>Aiden Quinones</td>
         <td>16</td>
         <td>Frank Quinones &amp; Alisha Fredrickson</td>
       </tr>
       <tr>
-        <td>2</td>
+        <td></td>
         <td>Jorge Carillo III</td>
         <td>10</td>
         <td>Lucy Legnys, Jorge Carillo</td>
       </tr>
       <tr>
-        <td>3</td>
+        <td></td>
         <td>Nolan Mcconnaghy</td>
         <td>21</td>
         <td>Mike &amp; Amy Mcconnaghy</td>
       </tr>
       <tr>
-        <td>4</td>
+        <td></td>
         <td>Carmelo "Melo" Badillo</td>
         <td>7</td>
         <td>Christian &amp; Autumn Badillo</td>
       </tr>
       <tr>
-        <td>5</td>
+        <td></td>
         <td>Andy Zambrana</td>
         <td>24</td>
         <td>Jose Luis &amp; Walesca Zambrana</td>
       </tr>
       <tr>
-        <td>6</td>
+        <td></td>
         <td>Emilio Rodriguez</td>
         <td>12</td>
         <td>Xaviro Rodriguez</td>
       </tr>
       <tr>
-        <td>7</td>
+        <td></td>
         <td>Liam Santos</td>
         <td>20</td>
         <td>Alicia Santos</td>
       </tr>
       <tr>
-        <td>8</td>
+        <td></td>
         <td>Mathias Espinosa</td>
         <td>5</td>
         <td>Gaby Espinosa</td>
       </tr>
       <tr>
-        <td>9</td>
+        <td></td>
         <td>Candido Andres Gomez Parra</td>
         <td>22</td>
         <td>Claudia Gomez</td>
       </tr>
       <tr>
-        <td>10</td>
+        <td></td>
         <td>Mekhi Hatchett</td>
         <td>17</td>
         <td>Nikki Hatchett</td>
       </tr>
       <tr>
-        <td>11</td>
+        <td></td>
         <td>Kevin Gonzalez</td>
         <td>11</td>
         <td>Kevis &amp; Maryori Gonzales</td>
       </tr>
       <tr>
-        <td>12</td>
+        <td></td>
         <td>Sofia Reyes</td>
         <td>8</td>
         <td>Mike &amp; Jamie Reyes</td>
       </tr>
       <tr>
-        <td>13</td>
+        <td></td>
         <td>Mathias Torres</td>
         <td>9</td>
         <td>Jose &amp; Vanessa Torres</td>
       </tr>
       <tr>
-        <td>14</td>
+        <td></td>
         <td>David Martinez</td>
         <td>1</td>
         <td>Imer Martinez &amp; Marines Nava</td>
       </tr>
       <tr>
-        <td>15</td>
+        <td></td>
         <td>Miguel</td>
         <td>TBD</td>
         <td>Silvio</td>
       </tr>
     </tbody>
   </table>
+
+  <!-- COACHING STAFF  -->
   <table class="info">
     <thead>
       <tr>
@@ -280,6 +290,8 @@ td {
       </tr>
     </tbody>
   </table>
+
+  <!-- UNIFORMS  -->
   <table class="info">
     <thead>
       <tr>
@@ -294,5 +306,31 @@ td {
       </tr>
     </tbody>
   </table>
+  <script>
+    // Wait for the DOM content to be loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the first table on the page
+      var table = document.querySelector('tbody');
+
+      // Get all the table rows within the first table
+      var rows = table.querySelectorAll('tr');
+
+      // Loop through each row and set the sequential number
+      for (var i = 0; i < rows.length; i++) {
+        // Get the first cell in the current row
+        var cell = rows[i].querySelector('td:first-child');
+
+        // Create a span element for the number
+        var numberSpan = document.createElement('span');
+
+        // Set the sequential number as the span's text
+        numberSpan.textContent = i + 1;
+
+        // Append the span element to the cell
+        cell.appendChild(numberSpan);
+      }
+    });
+  </script>
 </body>
+
 </html>
