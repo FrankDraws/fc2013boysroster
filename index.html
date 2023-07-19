@@ -198,7 +198,7 @@ and also iPads specifically.
     </thead>
 
     <!-- ROSTER  -->
-    <tbody>
+    <tbody id="main">
       <tr>
         <td></td>
         <td>Aiden Quinones</td>
@@ -323,30 +323,15 @@ and also iPads specifically.
       </tr>
     </tbody>
   </table>
+
   <script>
-    // Wait for the DOM content to be loaded
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get the first table on the page
-      var table = document.querySelector('tbody');
+    // This code was written by Rix.chat from Hashnode
+    const table = document.getElementById("main");
+    const rows = table.rows;
 
-      // Get all the table rows within the first table
-      var rows = table.querySelectorAll('tr');
-
-      // Loop through each row and set the sequential number
-      for (var i = 0; i < rows.length; i++) {
-        // Get the first cell in the current row
-        var cell = rows[i].querySelector('td:first-child');
-
-        // Create a span element for the number
-        var numberSpan = document.createElement('span');
-
-        // Set the sequential number as the span's text
-        numberSpan.textContent = i + 1;
-
-        // Append the span element to the cell
-        cell.appendChild(numberSpan);
-      }
-    });
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].cells[0].textContent = i + 1;
+    }
   </script>
 </body>
 
