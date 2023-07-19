@@ -48,3 +48,26 @@ This was the code I initially used and it worked. Then I received an email from 
 ```
 
 In this version, I decided to go with an `ID` to target the table. 
+
+Although the Rix.chat version is shorter, I do like that ChatGPT uses comments to explain each line. It really helps me better understand. I decided to ask Rix.chat to comment the code it wrote, and it did. It output a concise and clean answer. 
+
+Here's the commented version from Rix.chat: 
+
+```javascript
+  // Get the table element 
+  const table = document.getElementById("myTable");
+
+  // Get all the rows in the table
+  const rows = table.rows;
+
+  // Loop through each row  
+  for (let i = 0; i < rows.length; i++) {
+
+    // Get the first cell (column 0) of the current row  
+    const firstCell = rows[i].cells[0];
+
+    // Set the text content of the first cell to the row number  
+    firstCell.textContent = i + 1;
+
+  }
+```
