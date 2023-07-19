@@ -36,7 +36,7 @@ The following code was written by ChatGPT:
     });
 ```
 
-This was the code I initially used and it worked. Then I received an email from Hashnode about Rix.chat, so I tried it out. Here's the result (and the code I'm using for this table):
+This was the code I initially used and it worked. Then I received an email from Hashnode about their new chatbot [Rix.chat](https://hashnode.com/rix), so I tried it out. Here's the result (and the code I'm using for this table):
 
 ```javascript
     const table = document.getElementById("main");
